@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "print(f'\"Programming is like building a multilingual puzzle')" | python3
+python3 -c "print(f'\"Programming is like building a multilingual puzzle')"
