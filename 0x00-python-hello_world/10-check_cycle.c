@@ -6,15 +6,16 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *ptr = malloc(sizeof(listint_t));
+	listint_t *fptr = malloc(sizeof(listint_t));
+	listint_t *sptr = malloc(sizeof(listint_t));
 
-	ptr = list;
-	if (list == NULL)
-		return (1);
-	while (ptr != NULL)
+	fptr = list;
+	sptr = list;
+	while (fptr != NULL && fptr->next != NULL && sptr != NULL)
 	{
-		ptr = ptr->next;
-		if (ptr == list)
+		sptr = sptr->next;
+		fptr = fptr->next->next;
+		if (sptr == fptr)
 			return (1);
 	}
 	return (0);
