@@ -1,9 +1,11 @@
 #!/usr/bin/python3
-i = 1
-for x in range(9):
-    for y in range(i, 10):
-        if i != 9:
-            print('{:d}{:d}, '.format(x, y), end="")
+for x in range(10):
+    for y in range(10):
+        if y > x:
+            print('{:d}{:d}'.format(x, y), end='')
+            if '{:d}{:d}'.format(x, y) == '89':
+                print('')
+            else:
+                print(', ', end='')
         else:
-            print('{:d}{:d}'.format(x, y))
-    x += 1
+            continue
