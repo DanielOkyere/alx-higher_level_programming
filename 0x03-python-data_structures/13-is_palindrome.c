@@ -16,7 +16,7 @@ int is_palindrome(listint_t **head)
 	listint_t *midnode = NULL;
 	int res = 1;
 
-	if (*head != NULL)
+	if (*head != NULL && (*head)->next != NULL)
 	{
 		while (fptr != NULL && fptr->next != NULL)
 		{
