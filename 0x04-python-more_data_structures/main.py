@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-number_keys = __import__('5-number_keys').number_keys
+print_sorted_dictionary = __import__('6-print_sorted_dictionary').print_sorted_dictionary
 
-a_dictionary = { 'language': "C", 'number': 13, 'track': "Low level" }
-nb_keys = number_keys(a_dictionary)
-print("Number of keys: {:d}".format(nb_keys))
+a_dictionary = { 'language': "C", 'Number': 89, 'track': "Low level", 'ids': [1, 2, 3] }
+print_sorted_dictionary(a_dictionary)
