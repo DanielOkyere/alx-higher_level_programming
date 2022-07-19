@@ -9,5 +9,8 @@ class Square:
     __size = 0
 
     def __init__(self, value):
+        """
+        Args:
+             value (num): int value
+        """
         self.__size = value
-
