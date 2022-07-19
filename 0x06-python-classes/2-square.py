@@ -12,7 +12,8 @@ class Square:
     __size = 0
 
     def __init__(self, size=0):
-        """Args:
+        """initializes the square
+           Args:
                 size (int): Interger and should
                 be greater than 0
            Returns:
