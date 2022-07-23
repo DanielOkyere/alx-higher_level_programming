@@ -1,0 +1,89 @@
+The ``add_integer`` module
+==========================
+
+Using ``add_integer``
+---------------------
+ 	>>> add_integer = __import__("0-add_integer").add_integer
+
+Checking for function docstring:
+	 >>> m = __import__("0-add_integer").__doc__
+	 >>> len(m) > 1
+	 True
+
+Checking for function docstring:
+	 >>> f = __import__("0-add_integer").add_integer.__doc__
+	 >>> len(f) > 1
+	 True
+
+Checking regular addition:
+	 >>> add_integer(2, 3)
+	 5
+
+Checking positive with negative:
+	 >>> add_integer(2, -4)
+	 -2
+	 >>> add_integer(-6, 8)
+	 2
+
+Checking addition over multiple values:
+	 >>> [add_integer(i, i ** 2) for i in range(9)]
+	 [0, 2, 6, 12, 20, 30, 42, 56, 72]
+
+Checking for float values:
+	 >>> add_integer(2.1, 4)
+	 6
+	 >>> add_integer(5, 7.8)
+	 12
+	 >>> add_integer(4.5, 5.5)
+	 9
+
+Checking for NaN:
+	 >>> add_integer(1, float('nan'))
+	 Traceback (most recent call last):
+	 ...
+	 ValueError: cannot convert float NaN to integer
+
+Checking with infinity:
+	 >>> add_integer(1, float('inf'))
+	 Traceback (most recent call last):
+	 ...
+	 OverflowError: cannot convert float infinity to integer
+
+Checking long long int:
+	 >>> add_integer(9999999999999999999999999, 1)
+	 10000000000000000000000000
+
+Checking with non-number:
+	 >>> add_integer([1], 2)
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: a must be an integer
+
+	 >>> add_integer(3, "2")
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: b must be an integer
+
+Checking with booleans:
+	 >>> add_integer(True, 1)
+	 2
+	 >>> add_integer(1, False)
+	 1
+
+Checking no args:
+	 >>> add_integer()
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: add_integer() missing 2 required positional arguments: 'a' and 'b'
+
+Checking one argument:
+	 >>> add_integer(1)
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: add_integer() missing 1 required positional argument: 'b'
+
+Checking more than 3 args:
+	 >>> add_integer(1, 2, 3)
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: add_integer() takes 2 positional arguments but 3 were given
