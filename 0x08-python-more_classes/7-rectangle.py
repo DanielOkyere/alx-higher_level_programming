@@ -65,7 +65,7 @@ class Rectangle:
     def __str__(self):
         """Returns printable string representation of the rectangle"""
         string = ""
-        if self.__width != 0 and self.__height != 0:
+        if self.__width == 0 and self.__height == 0:
             return string
         for row in range(self.__height):
             if row < (self.__height - 1):
