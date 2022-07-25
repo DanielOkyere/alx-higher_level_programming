@@ -11,8 +11,8 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         """The init initializes with height at 0, and width at 0
         """
-        self.width = width
-        self.height = height
+        self.__width = width
+        self.__height = height
 
     @property
     def width(self):
@@ -56,9 +56,8 @@ class Rectangle:
         """Returns printable string representation of the rectangle"""
         string = ""
         if self.__width != 0 and self.__height != 0:
-            return string
-        string += "\n".join("#" * self.__width
-                            for j in range(self.__height))
+            string += "\n".join("#" * self.__width
+                                for j in range(self.__height))
         return string
 
     def __repr__(self):
