@@ -66,11 +66,12 @@ class Rectangle:
         """Returns printable string representation of the rectangle"""
         string = ""
         if self.__width != 0 and self.__height != 0:
-            for row in range(self.__height):
-                if row < (self.__height - 1):
-                    string += (str(self.print_symbol) * self.__width) + "\n"
-                else:
-                    string += (str(self.print_symbol) * self.__widhth)
+            return string
+        for row in range(self.__height):
+            if row < (self.__height - 1):
+                string += (str(self.print_symbol) * self.__width) + "\n"
+            else:
+                string += (str(self.print_symbol) * self.__widhth)
         return string
 
     def __repr__(self):
