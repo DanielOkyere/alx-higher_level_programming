@@ -65,14 +65,9 @@ class Rectangle:
     def __str__(self):
         """Returns printable string representation of the rectangle"""
         string = ""
-        if self.__width == 0 and self.__height == 0:
-            return string
-        for row in range(self.__height):
-            if row < (self.__height - 1):
-                string += (str(self.print_symbol) * self.__width) + "\n"
-            else:
-                string += (str(self.print_symbol) * self.__widhth)
-        return string
+        if self.__width != 0 and self.__height != 0:
+            string += "\n".join(str(self.print_symbol) * self.__width
+                                for j in range(self.__height))
 
     def __repr__(self):
         """ represent self for eval"""
@@ -80,5 +75,5 @@ class Rectangle:
 
     def __del__(self):
         """delete self and count"""
-        type(self).number_of_instances -= 1
         print("Bye rectangle...")
+        type(self).number_of_instances -= 1
