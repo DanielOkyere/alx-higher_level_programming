@@ -68,6 +68,7 @@ class Rectangle:
         if self.__width != 0 and self.__height != 0:
             string += "\n".join(str(self.print_symbol) * self.__width
                                 for j in range(self.__height))
+        return string
 
     def __repr__(self):
         """ represent self for eval"""
