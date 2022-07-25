@@ -9,8 +9,14 @@ class Rectangle:
     a `TypeError` exception would be raise if any is not an int
     """
     def __init__(self, width=0, height=0):
-        """The init initializes with height at 0, and width at 0
-        """
+        if not isinstance(width, int):
+            raise TypeError("width must be an integer")
+        if width < 0:
+            raise ValueError("width must be >= 0")
+        if not isinstance(height, int):
+            raise TypeError("height must be an integer")
+        if height < 0:
+            raise ValueError("height must be >= 0")
         self.__width = width
         self.__height = height
 
@@ -61,5 +67,5 @@ class Rectangle:
         return string
 
     def __repr__(self):
-        """Returns a string representation of the rectangle for production"""
-        return "Return({:d}, {:d})".format(self.__width, self.__height)
+        """ represent self for eval"""
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
