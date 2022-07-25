@@ -8,6 +8,8 @@ class Rectangle:
     The values of width and height should only be integers.
     a `TypeError` exception would be raise if any is not an int
     """
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         if not isinstance(width, int):
             raise TypeError("width must be an integer")
