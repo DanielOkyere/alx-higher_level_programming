@@ -92,3 +92,7 @@ class Rectangle(Base):
         """Getter for y attribute"""
         self.check_type_value('y', y, True)
         self.__y = y
+
+    def area(self) -> int:
+        """area of rectangle"""
+        return self.width * self.height
