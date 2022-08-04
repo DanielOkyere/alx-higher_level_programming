@@ -2,6 +2,7 @@
 import unittest
 from models.base import Base
 
+
 class BaseTest(unittest.TestCase):
     """ Assert basic base creation"""
     def test_base_creation(self):
