@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines the class rectangle which inherits from `Base`"""
 from models.base import Base
+import sys
 
 
 class Rectangle(Base):
@@ -96,3 +97,9 @@ class Rectangle(Base):
     def area(self) -> int:
         """area of rectangle"""
         return self.width * self.height
+
+    def display(self) -> str:
+        """ print # shape"""
+        print('\n' * self.y, end='')
+        for lh in range(self.height):
+            print(' ' * self.x + '#' * self.width)
