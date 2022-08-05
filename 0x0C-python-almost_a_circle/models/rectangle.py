@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Defines the class rectangle which inherits from `Base`"""
 from models.base import Base
-import sys
 
 
 class Rectangle(Base):
