@@ -40,7 +40,7 @@ class Base:
         """Write the JSON serialization of a list of object
         Args:
             list_objs (list): A list of inherited Base instances
-        
+
         """
         filename = cls.__name__ + ".json"
         with open(filename, "w") as jsonfile:
@@ -63,7 +63,6 @@ class Base:
             return []
         return json.loads(json_string)
 
-
     @classmethod
     def create(cls, **dictionary):
         """Return a class instantiated from a dictionary of attributes.
@@ -77,7 +76,6 @@ class Base:
                 new = cls(1)
             new.update(**dictionary)
             return new
-
 
     @classmethod
     def load_from_file(cls):
@@ -175,4 +173,3 @@ class Base:
             turt.hideturtle()
 
         turtle.exitonclick()
-        
