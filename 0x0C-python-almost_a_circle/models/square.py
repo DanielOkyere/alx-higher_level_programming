@@ -13,7 +13,6 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """Initializer for Square"""
         super().__init__(size, size, x, y, id)
-        self.__size = size
     
     @property
     def size(self) -> int:
@@ -44,3 +43,11 @@ class Square(Rectangle):
             for key, value in kwargs.items():
                 if key in attr:
                     setattr(self, key, value)
+
+    def to_dictionary(self) -> dict:
+        """ Square to dictionary """
+        id = self.id
+        size = self.__size
+        x = self.x
+        y = self.y
+        return {'id': id, 'x': x, 'size': size, 'y': y}
