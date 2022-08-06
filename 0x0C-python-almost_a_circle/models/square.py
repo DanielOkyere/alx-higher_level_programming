@@ -2,6 +2,7 @@
 """ Definition for Square class"""
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """Square class inherits the attributes of Rectangle
     Attributes:
@@ -10,17 +11,18 @@ class Square(Rectangle):
         y (int): y value
         id (int): default none
     """
+
     def __init__(self, size, x=0, y=0, id=None):
         """Initializer for Square"""
         super().__init__(size, size, x, y, id)
         self.__size = size
-    
+
     @property
     def size(self) -> int:
         """Size greater"""
         return self.__size
 
-    @size.getter
+    @size.setter
     def size(self, value: int):
         """size setter"""
         self.__size = value
