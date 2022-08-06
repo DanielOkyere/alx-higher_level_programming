@@ -97,7 +97,7 @@ class Rectangle(Base):
         """area of rectangle"""
         return self.width * self.height
 
-    def display(self) -> str:
+    def display(self):
         """ print # shape"""
         print('\n' * self.y, end='')
         for lh in range(self.height):
@@ -118,7 +118,6 @@ class Rectangle(Base):
     def to_dictionary(self) -> dict:
         """ Rectangle to dictionary """
         id = self.id
-        size = self.__size
         x = self.x
         y = self.y
-        return {'id': id, 'x': x, 'size': size, 'y': y}
+        return {'id': id, 'x': x, 'y': y}
