@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """ Definition for Square class"""
 from models.rectangle import Rectangle
 
