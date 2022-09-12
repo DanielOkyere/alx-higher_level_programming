@@ -1,4 +1,4 @@
--- not in my genres
+-- show `not in my genres`
 SELECT tv_genres.name
 FROM tv_genres
 WHERE tv_genres.id NOT IN (
