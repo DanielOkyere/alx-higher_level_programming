@@ -4,15 +4,13 @@
  * Square based on 5-Square
  */
 class Square extends require('./5-square.js') {
-  constructor (size) {
-    super(size);
-    this.size = size;
-  }
-
-  charPrint (c = 'X') {
-    if (c === undefined) this.print();
-    for (let i = 0; i < this.size; i++) {
-      console.log(c.repeat(this.size));
+  charPrint (c) {
+    if (c === undefined) {
+      this.print();
+    } else {
+      for (let i = 0; i < this.size; i++) {
+        console.log(c.repeat(this.size));
+      }
     }
   }
 }
