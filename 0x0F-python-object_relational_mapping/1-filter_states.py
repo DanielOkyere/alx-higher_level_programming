@@ -24,11 +24,11 @@ if __name__ == '__main__':
     cur.execute("""
                 SELECT name, id FROM {0}
                 WHERE (SELECT SUBSTRING(name, 1, 1))
-                LIKE '%{1}%' ORDER BY id ASC
+                LIKE '{1}%' ORDER BY id ASC
                 """.format('states', 'N'))
     states = list(cur.fetchall())
 
     for state in states:
-        print("({0}, '{1}')".format(state[1], state[0]))
+        print(state)
     cur.close()
     db.close()
