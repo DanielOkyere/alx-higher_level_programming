@@ -20,7 +20,7 @@ if __name__ == '__main__':
                          db=args[3],
                          port=3306)
     cur = db.cursor()
-    cur.execute("""SELECT * FROM states s
+    cur.execute("""SELECT c.id, c.name, s.name FROM states s
                 JOIN cities c
                 ON s.id = c.state_id
                 ORDER BY c.id ASC;
@@ -28,7 +28,7 @@ if __name__ == '__main__':
     states = cur.fetchall()
 
     for state in states:
-        print("({0}, '{1}', '{2}')".format(state[2], state[4], state[1]))
+        print(state)
 
     cur.close()
     db.close()
