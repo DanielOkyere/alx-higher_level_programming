@@ -21,8 +21,8 @@ if __name__ == '__main__':
                          port=3306)
 
     cur = db.cursor()
-    cur.execute("""SELECT name, id 
-                FROM {0} 
+    cur.execute("""SELECT name, id
+                FROM {0}
                 ORDER BY id ASC""".format('states'))
     states = list(cur.fetchall())
 
@@ -30,4 +30,3 @@ if __name__ == '__main__':
         print("({0}, '{1}')".format(state[1], state[0]))
     cur.close()
     db.close()
-    
