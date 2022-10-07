@@ -21,14 +21,11 @@ if __name__ == '__main__':
                          port=3306)
 
     cur = db.cursor()
-    cur.execute("""
-                SELECT name, id FROM {0}
-                WHERE (SELECT SUBSTRING(name, 1, 1))
-                LIKE '%{1}%' ORDER BY id ASC
-                """.format('states', 'N'))
-    states = list(cur.fetchall())
+    cur.execute("SELECT * FROM states")
+    states = cur.fetchall()
 
     for state in states:
-        print(state)
+        if state[1][0] == 'N':
+            print(state)
     cur.close()
     db.close()
