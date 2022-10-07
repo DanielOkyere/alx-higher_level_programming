@@ -23,8 +23,8 @@ if __name__ == '__main__':
     cur = db.cursor()
     cur.execute("""
                 SELECT name, id FROM {0}
-                WHERE (SELECT SUBSTRING(name, 1, 1))
-                LIKE '{1}%' ORDER BY id ASC
+                WHERE name
+                LIKE BINARY '{1}%' ORDER BY id ASC
                 """.format('states', 'N'))
     states = list(cur.fetchall())
 
