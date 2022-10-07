@@ -22,9 +22,11 @@ if __name__ == '__main__':
 
     cur = db.cursor()
     cur.execute("""
-                SELECT name, id 
-                FROM {0} 
-                WHERE name LIKE '{1}'
+                SELECT *
+                FROM {0}
+                WHERE CAST(name AS BINARY)
+                LIKE CAST('{1}' AS BINARY)
+                ORDER BY id ASC;
                 """.format('states', args[4]))
     states = cur.fetchall()
 
