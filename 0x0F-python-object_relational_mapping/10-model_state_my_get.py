@@ -17,13 +17,14 @@ if __name__ == '__main__':
             argv[1],
             argv[2],
             argv[3]))
+        state_name = argv[4]
         Base.metadata.create_all(engine)
         session = sessionmaker(bind=engine)()
         chk = map(lambda x: x.isalpha() or (x in (' ', '%', '_')),
-                  argv[4])
+                  state_name)
         if not all(chk):
-            argv[4] = ''
-        result = session.query(State).filter(State.name == argv[4]).first()
+            state_name = ''
+        result = session.query(State).filter(State.name == state_name).first()
         if result is not None:
             print("{}".format(result.id))
         else:
