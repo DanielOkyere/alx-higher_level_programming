@@ -1,3 +1,3 @@
 #!/bin/bash
 # Insert specific header
-curl -sL -H 'X-HolbertonSchool-User-Id: 98' "$1"
+curl -sL -H 'X-School-User-Id: 98' "$1"
