@@ -10,7 +10,7 @@ if __name__ == '__main__':
     import sys
     import requests
 
-    url = 'https://api.github.com/repos/{}/{}/commits'\
+    url = 'https://api.github.com/repos/{}/{}/commits' \
         .format(sys.argv[1], sys.argv[2])
     params = {
         'per_page': 10
@@ -20,5 +20,5 @@ if __name__ == '__main__':
     for el in res:
         print('{}: {}'.format(
             el.get('sha'),
-            el.get('author').get('login')
+            el['commit']['author']['name']
         ))
