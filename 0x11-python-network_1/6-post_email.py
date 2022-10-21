@@ -9,4 +9,5 @@ and finally displays the body of the response.
 if __name__ == '__main__':
     import sys, requests
     data = {'email' : sys.argv[2]}
-    r = requests.post(sys.argv[1], data)
+    r = requests.post(sys.argv[1], data = data)
+    print(r.text)
