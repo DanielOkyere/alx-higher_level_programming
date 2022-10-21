@@ -20,12 +20,15 @@ if __name__ == "__main__":
     import sys
     import requests
 
-    q = sys.argv[2]
-    if q is None:
-        print('No result')
-    else:
-        r = requests.get(sys.argv[1] + '?' + q)
-        if r.json() is None:
-            print('Not a valid JSON')
+    q = "" if len(sys.argv) == 1 else sys.argv[1]
+    url = 'http://0.0.0.0:5000/search_user'
+    data = {'q': q}
+    r = requests.post(url, data=data)
+    try:
+        res = r.json()
+        if res == {}:
+            print('No result')
         else:
-            print(r.json())
+            print("[{}] {}".format(res.get('id'), res.get('name')))
+    except ValueError:
+        print('Not a valid JSON')
