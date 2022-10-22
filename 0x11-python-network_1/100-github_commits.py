@@ -12,10 +12,8 @@ if __name__ == '__main__':
 
     if len(sys.argv) > 2:
         url = 'https://api.github.com/repos/{}/{}/commits' \
-            .format(sys.argv[1], sys.argv[2])
-        params = {
-            'per_page': 10
-        }
+            .format(sys.argv[2], sys.argv[1])
+        params = {'per_page': 10}
         r = requests.get(url, params=params)
         res = r.json()
         if r.status_code == 200:
