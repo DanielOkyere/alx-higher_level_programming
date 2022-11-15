@@ -14,5 +14,5 @@ try {
   const data = fs.readFileSync(filePath, 'utf8');
   console.log(data);
 } catch (err) {
-  console.error({...err});
+  console.error({ ...err });
 }
