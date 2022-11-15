@@ -18,5 +18,7 @@ request(process.argv[2], function (error, response, body) {
       }
     }
     console.log(count);
+  } else {
+    console.log('An error occured. Status code: ' + response.statusCode);
   }
 });
