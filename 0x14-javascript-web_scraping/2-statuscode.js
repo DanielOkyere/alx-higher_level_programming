@@ -10,4 +10,4 @@ const url = process.argv[2];
 req.get(url).on('response',(response, error)=>{
     if (error) console.log({...error});
     console.log(response.statusCode);
-})
+});
